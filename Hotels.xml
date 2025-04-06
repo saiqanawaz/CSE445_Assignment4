@@ -1,52 +1,66 @@
-using System;
-using System.Xml;
-using System.Xml.Schema;
-using Newtonsoft.Json;
+<?xml version="1.0" encoding="UTF-8"?>
+<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/saiqanawaz/CSE445_Assignment4/refs/heads/main/Hotels.xsd">
+  <Hotel Rating="4.2" Chain="Westin">
+    <Name>Westin</Name>
+    <Phone>800-937-8461</Phone>
+    <Phone>480-968-8885</Phone>
+    <Address Number="11" Street="E.7th St" City="Tempe" State="AZ" Zip="85281" NearestAirport="Sky Harbor"/>
+  </Hotel>
+  <Hotel Rating="4.5" Chain="Hilton">
+    <Name>Hilton Phoenix</Name>
+    <Phone>602-222-2222</Phone>
+    <Address Number="100" Street="N Central Ave" City="Phoenix" State="AZ" Zip="85004" NearestAirport="Phoenix Sky Harbor"/>
+  </Hotel>
 
-namespace ConsoleApp1
-{
-    public class Program
-    {
-        public static string xmlURL = "https://raw.githubusercontent.com/saiqanawaz/CSE445_Assignment4/main/Hotels.xml";
-        public static string xmlErrorURL = "https://raw.githubusercontent.com/saiqanawaz/CSE445_Assignment4/main/HotelsErrors.xml";
-        public static string xsdURL = "https://raw.githubusercontent.com/saiqanawaz/CSE445_Assignment4/main/Hotels.xsd";
+  <Hotel Rating="4.0">
+    <Name>Marriott Downtown</Name>
+    <Phone>623-333-3333</Phone>
+    <Phone>623-444-4444</Phone>
+    <Address Number="200" Street="W Washington St" City="Phoenix" State="AZ" Zip="85003" NearestAirport="Phoenix Sky Harbor"/>
+  </Hotel>
 
-        public static void Main(string[] args)
-        {
-            string result = Verification(xmlURL, xsdURL);
-            Console.WriteLine(result);
-            result = Verification(xmlErrorURL, xsdURL);
-            Console.WriteLine(result);
-            result = Xml2Json(xmlURL);
-            Console.WriteLine(result);
-        }
+  <Hotel Chain="Hyatt">
+    <Name>Hyatt Regency</Name>
+    <Phone>480-555-5555</Phone>
+    <Address Number="50" Street="N 3rd St" City="Phoenix" State="AZ" Zip="85004" NearestAirport="Phoenix Sky Harbor"/>
+  </Hotel>
 
-        public static string Verification(string xmlUrl, string xsdUrl)
-        {
-            try
-            {
-                XmlReaderSettings s = new XmlReaderSettings();
-                s.Schemas.Add(null, xsdUrl);
-                s.ValidationType = ValidationType.Schema;
-                s.ValidationFlags |= XmlSchemaValidationFlags.ReportValidationWarnings;
-                s.ValidationEventHandler += (o, e) => { throw new Exception(e.Message); };
-                using (XmlReader r = XmlReader.Create(xmlUrl, s))
-                {
-                    while (r.Read()) { }
-                }
-                return "No Error";
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
+  <Hotel Rating="4.1">
+    <Name>Sheraton Grand</Name>
+    <Phone>602-666-6666</Phone>
+    <Address Number="340" Street="N 5th St" City="Phoenix" State="AZ" Zip="85004" NearestAirport="Phoenix Sky Harbor"/>
+  </Hotel>
 
-        public static string Xml2Json(string xmlUrl)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(xmlUrl);
-            return JsonConvert.SerializeXmlNode(doc);
-        }
-    }
-}
+  <Hotel Rating="4.3" Chain="Best Western">
+    <Name>Best Western Plus</Name>
+    <Phone>928-777-7777</Phone>
+    <Address Number="77" Street="E Broadway Rd" City="Tempe" State="AZ" Zip="85282" NearestAirport="Sky Harbor"/>
+  </Hotel>
+
+  <Hotel Rating="3.9">
+    <Name>Holiday Inn Express</Name>
+    <Phone>480-888-8888</Phone>
+    <Address Number="150" Street="S Priest Dr" City="Tempe" State="AZ" Zip="85281" NearestAirport="Sky Harbor"/>
+  </Hotel>
+
+  <Hotel Rating="4.4" Chain="Radisson">
+    <Name>Radisson Hotel</Name>
+    <Phone>602-999-9999</Phone>
+    <Address Number="99" Street="E Van Buren St" City="Phoenix" State="AZ" Zip="85004" NearestAirport="Phoenix Sky Harbor"/>
+  </Hotel>
+
+  <Hotel Rating="4.6">
+    <Name>Embassy Suites</Name>
+    <Phone>480-123-4567</Phone>
+    <Phone>480-765-4321</Phone>
+    <Address Number="10" Street="E Thomas Rd" City="Phoenix" State="AZ" Zip="85012" NearestAirport="Phoenix Sky Harbor"/>
+  </Hotel>
+
+  <Hotel Rating="4.7" Chain="DoubleTree">
+    <Name>DoubleTree by Hilton</Name>
+    <Phone>602-987-6543</Phone>
+    <Address Number="44" Street="S 3rd St" City="Phoenix" State="AZ" Zip="85004" NearestAirport="Phoenix Sky Harbor"/>
+  </Hotel>
+
+</Hotels>
