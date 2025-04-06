@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Hotels.xsd">
+  <Hotel Rating="4.2" Chain="Westin">
+    <Name>Westin</Name>
+    <Phone>800-937-8461</Phone>
+    <Phone>480-968-8885</Phone>
+    <Address Number="11" Street="E.7th St" City="Tempe" State="AZ" Zip="85281" NearstAirport="Sky Harbor"/>
+  </Hotel>
+  <Hotel Rating="4.5" Chain="Hilton">
+    <Name>Hilton Phoenix</Name>
+    <Phone>602-222-2222</Phone>
+    <Address Number="100" Street="N Central Ave" City="Phoenix" State="AZ" Zip="85004" NearstAirport="Phoenix Sky Harbor"/>
+  </Hotel>
+</Hotels>

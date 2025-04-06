@@ -1,0 +1,7 @@
+<Hotel> 
+  <Hotel Rating="4.2">
+    <Name>Westin</Name>
+    <Name>Duplicate Name</Name>
+    <Address Number="11" Street="E.7th St" City="Tempe" State="AZ" Zip="85281"> 
+  </Hotel>
+</Hotel>
