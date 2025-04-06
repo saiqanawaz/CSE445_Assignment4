@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Hotel>
+<Hotel> 
   <Hotel Rating="4.2">
     <Name>Westin</Name>
-    <Name>Duplicate Name</Name>
+    <Name>Duplicate Name</Name> 
     <Address Number="11" Street="E.7th St" City="Tempe" State="AZ" Zip="85281">
   </Hotel>
   <Hotel Rating="4.5">
     <Name>Hilton Phoenix</Name>
-    <Address Number="100" Street="N Central Ave" City="Phoenix" State="AZ" Zip="85004"/>
-  </Hotel>
-  <Hotel Rating="4.0">
-    <Phone>623-333-3333</Phone>
-    <Address Number="200" Street="W Washington St" City="Phoenix" State="AZ" Zip="85003" NearstAirport="Phoenix Sky Harbor"/>
+    <Address Number="100" Street="N Central Ave" City="Phoenix" State="AZ" Zip="85004" />
   </Hotel>
 </Hotel>
